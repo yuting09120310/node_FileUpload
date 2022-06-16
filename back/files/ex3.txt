@@ -1,0 +1,21 @@
+﻿#include <stdio.h>
+
+
+int main() 
+{ 
+int array[20]; 
+
+int *ptr, sum, i; 
+
+printf("請輸入 20 個整數 \n"); 
+for (i = 0; i < 20; i++) 
+scanf("%d",&array[i]); 
+sum = 0; 
+for( ptr = array; ptr < &array[20]; ptr++ ) 
+sum += *ptr; 
+
+printf("陣列整數總和是%d \n,",sum); 
+
+system("pause"); 
+return 0; 
+} 
