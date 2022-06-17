@@ -21,5 +21,17 @@
     "mysql": "^2.18.1",
     "nodemo": "^1.0.0",
     "nodemon": "^2.0.16"
+  },
+
+  "bin": "bin/www",
+  "pkg": {
+    "scripts":[
+      "models/**/*",
+      "routes/**/*",
+      "app.js"
+    ],
+    "assets": [
+      "public/**/*"
+    ]
   }
 }

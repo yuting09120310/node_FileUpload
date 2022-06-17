@@ -13,13 +13,17 @@ router.post('/upload',function (req, res, next) {
 function dealUpload(req,res){
   var form = new formidable.IncomingForm();
   
-  const absolutePath = path.join(__dirname, '../files/')
+  const absolutePath = 'D:/files/';
 
   form.uploadDir = absolutePath;
 
+  if(!fs.existsSync(absolutePath)){
+    fs.mkdirSync(absolutePath);
+  }
+
   form.parse(req,function(err,fields,files){
     if(err) throw err;
-    
+
     let oldFilename = files.up_file.originalFilename;
 
     // 重新命名上傳的檔案
@@ -38,6 +42,6 @@ function dealUpload(req,res){
   })
 }
 
-
+console.log("測試看看");
 module.exports = router;
 
